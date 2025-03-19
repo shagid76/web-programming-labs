@@ -7,7 +7,133 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="test-div"></div>
+    <button class="calculator1-button" id="calculator1-button" onclick="javascript:render_calculator1()">Calculator 1</button>
+    <button class="calculator2-button" id="calculator2-button" onclick="javascript:render_calculator2()">Calculator 2</button>
+
+    <form class="form-calculator1" id="form-calculator1" action="javascript:calculator1()">
+    <div>
+        <label for="hydrogen" class="label-hydrogen">Hydrogen:</label>
+        <input type="number" id="hydrogen" class="input-hydrogen" step="0.01" min="0" max="100">
+    </div>
+        <div>
+        <label for="carbon" class="label-carbon">Carbon:</label>
+        <input type="number" id="carbon" class="input-carbon" step="0.01" min="0" max="100">
+    </div>
+    <div>
+        <label for="sulfur" class="label-sulfur">Sulfur:</label>
+        <input type="number" id="sulfur" class="input-sulfur" step="0.01" min="0" max="100">
+    </div>
+    <div>
+        <label for="nitrogen" class="label-nitrogen">Nitrogen:</label>
+        <input type="number" id="nitrogen" class="input-nitrogen" step="0.01" min="0" max="100">
+    </div>
+    <div>
+        <label for="oxygen" class="label-oxygen">Oxygen:</label>
+        <input type="number" id="oxygen" class="input-oxygen" step="0.01" min="0" max="100">
+    </div>
+    <div>
+        <label for="moisture" class="label-moisture">Moisture:</label>
+        <input type="number" id="moisture" class="input-moisture" step="0.01" min="0" max="100">
+    </div>
+    <div>
+        <label for="ash" class="label-ash">Ash:</label>
+        <input type="number" id="ash" class="input-ash" step="0.01" min="0" max="100">
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+    <div class="calculator1-result" id="calculator1-result">
+        <div>
+            <p>Коефіцієнт переходу від робочої до сухої маси становить:  
+                <span class="factorFromWorkingToDryMass" id="factorFromWorkingToDryMass"></span></p>
+        </div>
+        <div>
+            <p>Коефіцієнт переходу від робочої до горючої маси становить:
+                <span class="factorFromWorkingToCombustible" id="factorFromWorkingToCombustible"></span></p>
+        </div>
+        <div>
+            <p class="dryMassCompositionOfFuel" id="dryMassCompositionOfFuel"> Склад сухої маси палива становитиме:
+                <span>Hc: <span class="hydrogenDryMass" id="hydrogenDryMass"></span></span>
+                <span>Cc: <span class="carbonDryMass" id="carbonDryMass"></span></span>
+                <span>Sc: <span class="sulfurDryMass" id="sulfurDryMass"></span></span>
+                <span>Nc: <span class="nitrogenDryMass" id="nitrogenDryMass"></span></span>
+                <span>Oc: <span class="oxygenDryMass" id="oxygenDryMass"></span></span>
+                <span>Ac: <span class="ashDryMass" id="ashDryMass"></span></span>
+            </p>
+        </div>
+        <div>
+            <p class="compositionOfTheCombustibleMassOfFuel" id=""> Склад горючої маси палива становитиме:
+                <span> Hг: <span class="hydrogenCombustible" id="hydrogenCombustible"></span></span>
+                <span> Cг: <span class="carbonCombustible" id="carbonCombustible"></span></span>
+                <span> Sг: <span class="sulfurCombustible" id="sulfurCombustible"></span></span>
+                <span> Nг: <span class="nitrogenCombustible" id="nitrogenCombustible"></span></span>
+                <span> Oг: <span class="oxygenCombustible" id="oxygenCombustible"></span></span>
+            </p>
+        </div>
+        <div>
+            <p>Нижча теплота згоряння для робочої маси за заданим складом компонентів палива
+            становить: <span class="lowerCalorificValue" id="lowerCalorificValue"></span></p>
+        </div>
+        <div>
+            <p>Нижча теплота згоряння для сухої маси за заданим складом компонентів палива
+                становить: <span class="heatPerDryMass" id="heatPerDryMass"></span></p>
+        </div>
+        <div>
+            <p>Нижча теплота згоряння для горючої маси за заданим складом компонентів палива
+                становить:<span class="heatPerCombustibleMass" id="heatPerCombustibleMass"></span></p>
+        </div>
+    </div>
+
+    <form class="form-calculator2" id="form-calculator2" action="javascript:calculator2()">
+        <div>
+            <label for="carbon" class="label-carbon-calculator2">Carbon:</label>
+            <input type="number" id="carbon" class="input-carbon-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="hydrogen" class="label-hydrogen-calculator2">Hydrogen:</label>
+            <input type="number" id="hydrogen" class="input-hydrogen-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="oxygen" class="label-oxygen-calculator2">Oxygen:</label>
+            <input type="number" id="oxygen" class="input-oxygen-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="sulfur" class="label-sulfur-calculator2">Sulfur:</label>
+            <input type="number" id="sulfur" class="input-sulfur-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="cmofo" class="label-cmofo-calculator2">lower-calorific-value-of-cmofo:</label>
+            <input type="number" id="cmofo" class="input-cmofo-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="wmof" class="label-wmof-calculator2">humidity-of-wmof:</label>
+            <input type="number" id="wmof" class="input-wmof-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="ash-content" class="label-ash-content-calculator2">ash-content:</label>
+            <input type="number" id="ash-content" class="input-ash-content-calculator2" step="0.01" min="0" max="100">
+        </div>
+        <div>
+            <label for="vanadium-content" class="label-vanadium-content-calculator2">vanadium-content:</label>
+            <input type="number" id="vanadium-content" class="input-vanadium-content-calculator2" step="0.01" min="0" max="1000">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="calculator2-result" id="calculator2-result">
+        <div>
+            <p class="compositionOfTheWorkingMassOfFuelOil" id="compositionOfTheWorkingMassOfFuelOil"> Склад робочої маси мазуту:
+                <span> Hp: <span class="hydrogenWMOF" id="hydrogenWMOF"></span></span>
+                <span> Cp: <span class="carbonWMOF" id="carbonWMOF"></span></span>
+                <span> Sp: <span class="sulfurWMOF" id="sulfurWMOF"></span></span>
+                <span> Op: <span class="oxygenWMOF" id="oxygenWMOF"></span></span>
+                <span> Vp: <span class="vanadiumWMOF" id="vanadiumWMOF"></span></span>
+                <span> Ap: <span class="ashWMOF" id="ashWMOF"></span></span>
+            </p>
+        </div>
+        <div>
+            <p>Нижча теплота згоряння мазуту на робочу масу для робочої маси за заданим складом
+                компонентів палива становить: <span class="lcvofo" id="lcvofo"></span></p>
+        </div>
+        </div>
     <script src="script.js"></script>
 </body>
 </html>
