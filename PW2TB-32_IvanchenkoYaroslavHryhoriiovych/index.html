@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-практика №2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="form-calculator" id="form-calculator" action="javascript:calculator()">
+        <div class="fields-container">
+            <label for="solid-fuel">Тверде паливо</label>
+            <select id="solid-fuel">
+                <option value="DGSH">Донецьке газове ГР</option>
+            </select>
+            <label for="solid-fuel-input">Кількість:</label>
+            <span class="input-container tones">
+                <input id="solid-fuel-input" type="text" step="any" placeholder="0.0" min="0">
+            </span>
+            <label for="oil-fuel">Мазут</label>
+            <select id="oil-fuel">
+                <option value="HS-40">Високосірчистий 40</option>
+                <option value="HS-100">Високосірчистий 100</option>
+                <option value="HS-200">Високосірчистий 200</option>
+                <option value="LS-40">Малосірчистий 40</option>
+                <option value="LS-100">Малосірчистий 40</option>
+            </select>
+            <label for="oil-fuel-input">Кількість:</label>
+            <span class="input-container tones">
+                <input id="oil-fuel-input" type="text" step="any" placeholder="0.0" min="0">
+            </span>
+            <label for="natural-gas">Природний газ</label>
+            <select id="natural-gas">
+                <option value="UU">Уренгой-Ужгород</option>
+                <option value="CAC">Середня Азія-Центр</option>
+            </select>
+            <label for="natural-gas-input">Кількість:</label>
+            <span class="input-container volume">
+                <input id="natural-gas-input" type="text" step="any" placeholder="0.0 м³" min="0"
+                    oninput="addSymbol(this)" autocomplete="off">
+            </span>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+
+    <div class="calculator-result" id="calculator-result">
+        <div class="result">
+            <h3>Для заданого енергоблоку і відповідним умовам роботи:</h3>
+            <div>
+                <p id="result-solid-fuel-ktv">
+                    <span>Показник емісії твердих частинок при спалюванні вугілля становитиме:</span>
+                    <span id="solid-fuel-ktv" class="highlighted"></span>
+                </p>
+            </div>
+
+            <div>
+                <p id="result-solid-fuel-etv">
+                    <span>Валовий викид при спалюванні вугілля становитиме:</span>
+                    <span id="solid-fuel-etv" class="highlighted"></span>
+                </p>
+            </div>
+            <div>
+                <p id="result-oil-fuel-ktv">
+                    <span>Показник емісії твердих частинок при спалюванні мазуту становитиме: </span>
+                    <span id="oil-fuel-ktv" class="highlighted"></span>
+                </p>
+            </div>
+            <div>
+                <p id="result-oil-fuel-etv">
+                    <span>Валовий викид при спалюванні мазуту становитиме: </span>
+                    <span id="oil-fuel-etv" class="highlighted"></span>
+                </p>
+            </div>
+            <div>
+                <p id="result-natural-gas-ktv">
+                    <span>Показник емісії твердих частинок при спалюванні природного газу становитиме: </span>
+                    <span id="natural-gas-ktv" class="highlighted"></span>
+                </p>
+            </div>
+            <div>
+                <p id="result-natural-gas-etv">
+                    <span>Валовий викид при спалюванні природного газу становитиме: </span>
+                    <span id="natural-gas-etv" class="highlighted"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
