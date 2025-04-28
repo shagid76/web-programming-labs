@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-практика №3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <form class="form-calculator" id="form-calculator" action="javascript:calculator()">
+        <div class="fields-container">
+            <div>
+                <label for="energy" class="label-energy">Середньодобова потужність:</label>
+                <input type="number" id="energy" class="input-energy" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="old-sigma" class="label-old-sigma">Середньоквадратичне відхилення σ1 старої системи:</label>
+                <input type="number" id="old-sigma" class="input-old-sigma" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="new-sigma" class="label-new-sigma">Середньоквадратичне відхилення σ2 вдосконаленої системи:</label>
+                <input type="number" id="new-sigma" class="input-new-sigma" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="price" class="label-price">Вартість електроенергії:</label>
+                <input type="number" id="price" class="input-price" step="0.01" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+
+    <div class="calculator-result" id="calculator-result">
+        <div>
+            <p>Прибуток до вдосконалення:
+                <span class="old-profit" id="old-profit"></span>
+            </p>
+        </div>
+        <div>
+            <p>Прибуток після вдосконалення:
+                <span class="new-profit" id="new-profit"></span>
+            </p>
+        </div>
+            <p>Різниця прибутків:
+                <span class="profit" id="profit"></span>
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.1/math.min.js"></script>
+</body>
+</html>
