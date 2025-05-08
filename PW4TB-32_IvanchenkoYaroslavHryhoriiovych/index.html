@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-практика №4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="calculator1-button" id="calculator1-button" onclick="javascript:render_calculator1()">Калькулятор 1</button>
+    <button class="calculator2-button" id="calculator2-button" onclick="javascript:render_calculator2()">Калькулятор 2</button>
+    <button class="calculator3-button" id="calculator3-button" onclick="javascript:render_calculator3()">Калькулятор 3</button>
+
+    <form class="form-calculator1" id="form-calculator1" action="javascript:calculator1()">
+        <div class="fields-container">
+            <div>
+                <label for="Ik" class="label-Ik">Ik:</label>
+                <input type="number" id="Ik" class="input-Ik" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="tf" class="label-tf">tф:</label>
+                <input type="number" id="tf" class="input-tf" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="Sm" class="label-Sm">Sm:</label>
+                <input type="number" id="Sm" class="input-Sm" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="Tm" class="label-Tm">Tm:</label>
+                <input type="number" id="Tm" class="input-Tm" step="0.01" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+
+    <div class="calculator1-result" id="calculator1-result">
+        <div>
+        <p>Результат:</p>
+        <div>
+            <p>Рекомендований кабель:
+                <span class="cebel" id="cabel"></span>
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <form class="form-calculator2" id="form-calculator2" action="javascript:calculator2()">
+        <div class="fields-container">
+            <div>
+                <label for="Sk" class="label-Sk">Sk:</label>
+                <input type="number" id="Sk" class="input-Sk" step="0.01" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+
+    <div class="calculator2-result" id="calculator2-result">
+        <div>
+        <p>Результат:</p>
+        <div>
+            <p>
+                Початкове діюче значення струму трифазного короткого замикання становить:
+                <span class="start" id="start"></span>
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <form class="form-calculator3" id="form-calculator3" action="javascript:calculator3()">
+        <div class="fields-container">
+            <div>
+                <label for="max-voltage" class="label-max-voltage">Максимальна напруга короткого замикання:</label>
+                <input type="number" id="max-voltage" class="input-max-voltage" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="nvt" class="label-nvt">Номінальна потужність трансформатора:</label>
+                <input type="number" id="nvt" class="input-nvt" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="mass" class="label-mass">Мінімальний активний опір статора: </label>
+                <input type="number" id="mass" class="input-mass" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="nvv" class="label-nvv">Номінальна напруга вольтажу: </label>
+                <input type="number" id="nvv" class="input-nvv" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="ass" class="label-ass">Активний опір статора:</label>
+                <input type="number" id="ass" class="input-ass" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="srs" class="label-srs">Реактивний опір статора: </label>
+                <input type="number" id="srs" class="input-srs" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="msrs" class="label-msrs">Мінімальний реактивний опір статора:</label>
+                <input type="number" id="msrs" class="input-msrs" step="0.01" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+    
+    <div class="calculator3-result" id="calculator3-result">
+        <div>
+            <p>
+                <span>Реактивний опір силового трансформатора: <span id="rspt"></span></span><br>
+                <span>Опори в нормальному режимі: Z: <span id="snmz"></span> X: <span id="snmx"></span></span><br>
+                <span>Опори в мінімальному режимі: Z: <span id="snmzMin"></span> X: <span id="snmxMin"></span></span><br>
+                <span>Струми в нормальному режимі: I(3): <span id="iNormal"></span> I(2): <span id="iNormal2"></span></span><br>
+                <span>Струми в мінімальному режимі: I(3): <span id="iMin"></span> I(2): <span id="iMin2"></span></span><br>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
