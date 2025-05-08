@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-практика №5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="calculator1-button" id="calculator1-button" onclick="javascript:render_calculator1()">Калькулятор 1</button>
+    <button class="calculator2-button" id="calculator2-button" onclick="javascript:render_calculator2()">Калькулятор 2</button>
+
+    <form class="form-calculator1" id="form-calculator1" action="javascript:calculator1()">
+        <div class="fields-container">
+            <div>
+                <label for="pl110" class="label-pl110">ПЛ-110 кВ:</label>
+                <input type="number" id="pl110" class="input-pl110" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="v110" class="label-v110">V-110 кВ:</label>
+                <input type="number" id="v110" class="input-v110" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="t110" class="label-t110">Т-110 кВ:</label>
+                <input type="number" id="t110" class="input-t110" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="v110m" class="label-v110m">V-10 кВ (малооливний):</label>
+                <input type="number" id="v110m" class="input-v110m" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="tires" class="label-tires">Збірні шини 10кВ на 1 приєднання:</label>
+                <input type="number" id="tires" class="input-tires" step="0.01" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+
+    <div class="calculator1-result" id="calculator1-result" style="display: none;">
+        <div>
+            <p>Результат:</p>
+            <div>
+                <p>
+                   <p><span>Частота відмов одноколової системи:</span><span id="woc"></span></p>
+                    <p><span>Середня тривалість відновлення:</span><span id="tvoc"></span></p>
+                    <p><span>Коефіцієнт аварійного простою одноколової системи:</span><span id="kaoc"></span></p>
+                    <p><span>Коефіцієнт планового простою одноколової системи:</span><span id="kpoc"></span></p>
+                    <p><span>Частота відмов одночасно двох кіл двоколової системи:</span><span id="wdk"></span></p>
+                    <p><span>Частота відмов двоколової системи з урахуванням секційного вимикача:</span><span id="wdc"></span></p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <form class="form-calculator2" id="form-calculator2" action="javascript:calculator2()">
+        <div class="fields-container">
+            <div>
+                <label for="zpera" class="label-zpera">Зпер.а:</label>
+                <input type="number" id="zpera" class="input-zpera" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="zperp" class="label-zperp">Зпер.п:</label>
+                <input type="number" id="zperp" class="input-zperp" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="omega" class="label-omega">ω:</label>
+                <input type="number" id="omega" class="input-omega" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="tb" class="label-tb">tв:</label>
+                <input type="number" id="tb" class="input-tb" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="kp" class="label-kp">kп:</label>
+                <input type="number" id="kp" class="input-kp" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="pm" class="label-pm">Pм:</label>
+                <input type="number" id="pm" class="input-pm" step="0.01" min="0" max="100">
+            </div>
+            <div>
+                <label for="tm" class="label-tm">Tм:</label>
+                <input type="number" id="tm" class="input-tm" step="0.01" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Обчислити</button>
+    </form>
+
+    <div class="calculator2-result" id="calculator2-result">
+        <div>
+        <p>Результат:</p>
+        <div>
+            <p>
+                <p><span>Математичне сподівання аварійного недовідпущення електроенергії становить:</span><span class="m-wneda" id="m-wneda"></span></p>
+                <p><span>Математичне сподівання планового недовідпущення електроенергії становить:</span><span class="m-wnedp" id="m-wnedp"></span></p>
+                <p><span>Математичне сподівання збитків від переривання електропостачання:</span><span class="m-zper" id="m-zper"></span></p>
+            </p>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
