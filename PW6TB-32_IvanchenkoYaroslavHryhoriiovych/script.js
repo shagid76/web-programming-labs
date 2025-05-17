@@ -1,7 +1,6 @@
 let hr = {
     "Шліфувальний верстат": { eta: 0.92, cosPhi: 0.9, Un: 0.38, n: 4, Pn: 20, Kv: 0.15, tgPhi: 1.33 },
     "Свердлильний верстат": { eta: 0.92, cosPhi: 0.9, Un: 0.38, n: 2, Pn: 14, Kv: 0.12, tgPhi: 1 },
-    // Add other devices as necessary...
 };
 
 let big = {
