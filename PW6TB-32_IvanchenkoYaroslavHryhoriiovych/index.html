@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Веб-практика №6</title>
+    <title>Калькулятор електричних навантажень</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="main-component">
         <div class="input-box">
+            <br>
+            <br>
+            <br>
+            
             <h2>Калькулятор електричних навантажень</h2>
             <table id="deviceTable">
                 <thead>
@@ -30,7 +36,8 @@
             <h3>Всього, навантаження цеху:</h3>
             <table id="totalTable">
                 <tr>
-                    <th>n⋅Рн, кВт</th>
+                    <th>n⋅Рн, кВт
+                    </th>
                     <td><input type="number" id="total_nPn" value="2330"></td>
                 </tr>
                 <tr>
@@ -47,17 +54,19 @@
                 </tr>
             </table>
 
-            <button onclick="calculate()">Обчислити</button>
+            <button onclick="calculate()" style="margin-top: 20px;">Обчислити</button>
         </div>
-        <div class="result-box">
+        <div class="result-box hidden">
             <h3>Результати:</h3>
             <p id="result1">
                 <span>Струми на І рівні електропостачання: </span><br>
                 <span id="dev_Ir"></span>
             </p>
-            <p id="result2"></p>
+            <p id="result2">
+            </p>
         </div>
     </div>
     <script src="script.js"> </script>
 </body>
+
 </html>
