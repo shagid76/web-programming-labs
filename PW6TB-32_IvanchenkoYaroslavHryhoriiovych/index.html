@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-практика №6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-component">
+        <div class="input-box">
+            <h2>Калькулятор електричних навантажень</h2>
+            <table id="deviceTable">
+                <thead>
+                    <tr>
+                        <th>Найменування ЕП</th>
+                        <th>ηн</th>
+                        <th>cos φ</th>
+                        <th>Uн (кВ)</th>
+                        <th>Кількість</th>
+                        <th>Pн (кВт)</th>
+                        <th>КВ</th>
+                        <th>tgφ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h3>Всього, навантаження цеху:</h3>
+            <table id="totalTable">
+                <tr>
+                    <th>n⋅Рн, кВт</th>
+                    <td><input type="number" id="total_nPn" value="2330"></td>
+                </tr>
+                <tr>
+                    <th>n⋅Рн⋅Кв, кВт</th>
+                    <td><input type="number" id="total_nPnKv" value="752"></td>
+                </tr>
+                <tr>
+                    <th>n⋅Рн⋅КВ⋅tgφ, квар</th>
+                    <td><input type="number" id="total_nPnKvTg" value="657"></td>
+                </tr>
+                <tr>
+                    <th>n⋅Рн<sup>2</sup></th>
+                    <td><input type="number" id="total_nPn2" value="96388"></td>
+                </tr>
+            </table>
+
+            <button onclick="calculate()">Обчислити</button>
+        </div>
+        <div class="result-box">
+            <h3>Результати:</h3>
+            <p id="result1">
+                <span>Струми на І рівні електропостачання: </span><br>
+                <span id="dev_Ir"></span>
+            </p>
+            <p id="result2"></p>
+        </div>
+    </div>
+    <script src="script.js"> </script>
+</body>
+</html>
